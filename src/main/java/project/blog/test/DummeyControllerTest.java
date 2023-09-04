@@ -54,7 +54,7 @@ public class DummeyControllerTest {
 
     //수정
     @PutMapping("/detail/{id}")
-    @Transactional //함수 시작할 때 작동이 되어 함수 종료시에 자동 commit
+    @Transactional //함수 시작할 때 작동이 되어 함수 종료 시에 자동 commit
     public User update(@PathVariable int id, User requestUser) {
         System.out.println("user_pw : " + requestUser.getUser_pw());
         System.out.println("email : " + requestUser.getEmail());
