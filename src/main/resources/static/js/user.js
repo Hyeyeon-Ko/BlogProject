@@ -8,6 +8,7 @@ let index = {
     save: function() {
         // alert('user의 save함수 호출됨');
         let data = {
+            //User model과 변수 같게 설정
             user_id: $("#user_id").val(),
             user_pw: $("#user_pw").val(),
             email: $("#email").val(),
