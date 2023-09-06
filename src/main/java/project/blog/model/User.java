@@ -30,8 +30,9 @@ public class User {
     @Column(nullable = false, length = 50)
     private String email;
 
-    @ColumnDefault("'user'")
-    private String role;
+    // DB는 Role Type이라는게 없다.
+    @Enumerated(EnumType.STRING)
+    private RoleType role;
 
     @CreationTimestamp //시간 자동 입력
     private Timestamp create_date;
