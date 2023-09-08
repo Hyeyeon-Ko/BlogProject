@@ -1,10 +1,14 @@
 package project.blog.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import project.blog.model.User;
 
-import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
-    Optional<User> findByEmail(String email);
+    // JPA Naming 전략
+//    User findByUser_idAndUser_pw(String user_id, String user_pw);
+
+    @Query(value = "SELECT * FROM user WHERE user_id = ? AND user_pw = ?;", nativeQuery = true)
+    User login(String user_id, String user_pw);
 }

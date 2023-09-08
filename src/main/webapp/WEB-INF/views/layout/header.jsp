@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset-UTF-8" pageEncoding="UTF-8" %>
-
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -20,14 +20,31 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/user">Yeon's blog</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/user/loginForm">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/user/signupForm">Sign Up</a>
-            </li>
+            <c:choose>
+                <c:when test="${empty sessionScope.principal}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/loginForm">로그인</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/signupForm">회원가입</a>
+                    </li>
+                </c:when>
+                <c:otherwise>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/board/writeForm">글쓰기</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/userForm">회원정보</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/logout">로그아웃</a>
+                    </li>
+                </c:otherwise>
+            </c:choose>
+
         </ul>
     </div>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
