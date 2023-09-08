@@ -5,7 +5,7 @@
 <div class="container">
     <form action="/user/signup">
         <div class="form-group">
-            <label for="user_id">Username:</label>
+            <label for="user_id">Id:</label>
             <input type="text" class="form-control" placeholder="Enter Id" id="user_id">
         </div>
 
