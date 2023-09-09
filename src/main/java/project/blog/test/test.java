@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class test {
-    @RequestMapping("/")
-    public String hello() {
-        System.out.println("helloworld");
-        return "<h1>hello world!!!</h1>";
-    }
+//    @RequestMapping("/")
+//    public String hello() {
+//        System.out.println("helloworld");
+//        return "<h1>hello world!!!</h1>";
+//    }
 }
